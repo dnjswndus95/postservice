@@ -8,8 +8,8 @@ spring:
             client-secret: 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
             scope: profile,email
           naver:
-            client-id: N_RigUxNAtOtEVdfYNnN
-            client-secret: 6ic5AN6zGW
+            client-id: EFeeRhWARjcvj64XIywz
+            client-secret: c93aL2Goap
             redirect-uri: "{baseUrl}/{action}/oauth2/code/{registrationId}"
             authorization_grant_type: authorization_code
             scope: name, email, profile_image
