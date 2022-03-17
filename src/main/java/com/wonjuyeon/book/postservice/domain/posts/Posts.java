@@ -1,5 +1,6 @@
 package com.wonjuyeon.book.postservice.domain.posts;
 
+import com.wonjuyeon.book.postservice.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,18 +9,16 @@ import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
-@Table(name = "POSTS")
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500, nullable = false)
     private String title;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     private String author;

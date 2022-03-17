@@ -47,8 +47,25 @@ public class PostsController {
     }
 
     @GetMapping("/post/{id}/edit")
-    public String editForm(@PathVariable Long id){
-       // postsService.find
-        return " ";
+    public String editForm(@PathVariable("id") Long id, Model model){
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("form", dto);
+        return "posts/editForm";
+    }
+
+    @PostMapping("/post/{id}/edit")
+    public String update(@PathVariable("id") Long id, @ModelAttribute("form")PostsUpdateDto updateDto){
+        PostsUpdateDto dto = PostsUpdateDto.builder()
+                .title(updateDto.getTitle())
+                .content(updateDto.getContent())
+                .build();
+        postsService.update(id, dto);
+        return "redirect:/post";
+    }
+
+    @PostMapping("/post/{id}/delete")
+    public String delete(@PathVariable Long id){
+        postsService.delete(id);
+        return "redirect:/post";
     }
 }

@@ -44,4 +44,21 @@ public class PostsService {
         post.update(dto.getTitle(), dto.getContent());
         return id;
     }
+
+    public PostsResponseDto findById(Long id){
+        Posts post = postsRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("해당 글이 없습니다. id = " + id)
+        );
+        return new PostsResponseDto(post);
+    }
+
+    @Transactional
+    public void delete(Long id){
+        Posts post = postsRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("해당 글이 없습니다. +id = " + id)
+        );
+
+        postsRepository.delete(post);
+    }
+
 }
