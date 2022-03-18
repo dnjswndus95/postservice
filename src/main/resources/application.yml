@@ -11,7 +11,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
-#    database-platform: org.hibernate.dialect.MySQL5Dialect
     properties:
       hibernate:
         show_sql: true
@@ -21,6 +20,3 @@ spring:
   profiles:
     include: oauth
 
-logging.level:
-  org.hibernate.SQL: debug
-  org.hibernate.type: trace
