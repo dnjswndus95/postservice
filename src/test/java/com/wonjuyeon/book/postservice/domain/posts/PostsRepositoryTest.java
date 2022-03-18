@@ -22,7 +22,7 @@ public class PostsRepositoryTest {
         postsRepository.deleteAll();
     }
 
-    @Test
+    /*@Test
     public void load(){
         String title = "테스트 게시글";
         String content = "테스트 본문";
@@ -39,5 +39,5 @@ public class PostsRepositoryTest {
         Posts post = postsList.get(0);
         assertThat(post.getTitle()).isEqualTo(title);
         assertThat(post.getContent()).isEqualTo(content);
-    }
+    }*/
 }
