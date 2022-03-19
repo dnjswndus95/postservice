@@ -20,8 +20,5 @@ spring:
   profiles:
     include: oauth
 
-logging.level:
-  org.springframework: debug
-    web: debug
-
-
+  logging.level:
+    org.hibernate.SQL: debug
