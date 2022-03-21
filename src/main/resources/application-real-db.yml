@@ -2,6 +2,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show_sql: false
   datasource:
     hikari:
